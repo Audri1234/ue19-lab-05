@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout le code du repository
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Configurer Docker pour l'authentification
     - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
       with:
@@ -22,12 +20,11 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    # Build l'image Docker
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner | tolower }}/${{ github.repository | tolower }}:latest .
+        docker build -t ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest .
 
-    # Push l'image Docker vers GitHub Packages
     - name: Push Docker image
       run: |
-        docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+  
+
