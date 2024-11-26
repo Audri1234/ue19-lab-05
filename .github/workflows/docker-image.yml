@@ -17,8 +17,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ github.actor }}  # Utilise le nom d'utilisateur de l'acteur (vous)
+        password: ${{ secrets.GITHUB_TOKEN }}  # Utilise le GITHUB_TOKEN pour l'authentification
 
     - name: Build Docker image
       run: |
