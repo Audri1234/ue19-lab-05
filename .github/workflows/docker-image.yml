@@ -18,17 +18,12 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.PAT_TOKEN }}
-
-    - name: Convert repository name to lowercase
-      run: |
-        REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')
-        echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/$REPO_NAME:latest .
+        docker build -t ghcr.io/audri1234/ue19-lab-05:latest .
 
     - name: Push Docker image
       run: |
-        docker push ghcr.io/$REPO_NAME:latest
+        docker push ghcr.io/audri1234/ue19-lab-05:latest
