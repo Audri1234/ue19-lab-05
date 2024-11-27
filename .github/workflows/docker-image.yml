@@ -25,7 +25,7 @@ jobs:
         docker build -t ghcr.io/audri1234/ue19-lab-05:latest .  # Assurez-vous que le registre est correct
 
     - name: Scan Docker image for vulnerabilities
-      uses: aquasecurity/trivy-action@v0.29.0
+      uses: aquasecurity/trivy-action@0.29.0
       with:
         image-ref: ghcr.io/audri1234/ue19-lab-05:latest
         format: table  # Format du rapport (table, json, etc.)
