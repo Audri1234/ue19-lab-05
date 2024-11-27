@@ -22,9 +22,9 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/audri1234/ue19-lab-05:latest .  # Assurez-vous que le registre est correct
+        docker build -t ghcr.io/Audri1234/ue19-lab-05:latest .  # Assurez-vous que le registre est correct
 
     - name: Push Docker image
       run: |
-        docker push ghcr.io/audri1234/ue19-lab-05:latest  # Pousse l'image sous votre compte personnel
+        docker push ghcr.io/Audri1234/ue19-lab-05:latest  # Pousse l'image sous votre compte personnel
 
